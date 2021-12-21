@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Friends extends Model
+{
+    use HasFactory;
+    protected $fillable = ['nama', 'no_telp', 'alamat'];
+
+    public function groups()
+    {
+        return $this->belongsTo(Groups::class);
+    }
+
+    public function riwayats()
+    {
+        return $this->hasMany(Riwayats::class);
+    }
+}
